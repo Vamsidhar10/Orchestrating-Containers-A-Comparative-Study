@@ -1,0 +1,20 @@
+config:
+  target: 'http://localhost:50349'
+  phases:
+    - duration: 120
+      arrivalRate: 50
+      rampTo: 100
+
+scenarios:
+  - name: 'Get Voting Page'
+    flow:
+      - get:
+          url: '/'
+      - think: 2
+      - post:
+          url: '/'
+          headers:
+            Content-Type: 'application/x-www-form-urlencoded'
+          json:
+            vote: 'b'
+            _encoded: 'true'

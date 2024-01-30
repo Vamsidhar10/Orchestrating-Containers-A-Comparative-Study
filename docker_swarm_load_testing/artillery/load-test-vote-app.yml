@@ -1,0 +1,17 @@
+config:
+  target: 'http://localhost:7005'
+  phases:
+    - duration: 50
+      arrivalRate: 50
+      rampTo: 100
+
+scenarios:
+  - name: 'Get Voting Page'
+    flow:
+      - get:
+          url: '/'
+      - think: 2
+      - post:
+          url: '/'
+          form:
+            vote: 'b'

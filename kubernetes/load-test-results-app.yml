@@ -1,0 +1,13 @@
+config:
+  target: 'http://localhost:50368'
+  phases:
+    - duration: 120
+      arrivalRate: 100
+      rampTo: 200
+
+scenarios:
+  - name: 'Get Results Page'
+    flow:
+      - get:
+          url: '/'
+      - think: 2
